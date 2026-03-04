@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default function App() {
+function FullSite() {
   return (
     <div className="min-h-screen relative overflow-hidden flex flex-col items-center justify-center p-6 md:p-12">
       {/* Dark density gradient background */}
@@ -73,4 +73,50 @@ export default function App() {
       </div>
     </div>
   );
+}
+
+function ZenComingSoon() {
+  return (
+    <div className="min-h-screen bg-[#F9F8F6] text-[#4A5D4E] flex flex-col items-center justify-center p-6 md:p-12" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+      <div className="max-w-2xl text-center space-y-10 animate-fade-in">
+        <div className="space-y-4">
+          <h1 className="text-4xl md:text-6xl font-light tracking-wide text-[#2C3B2F]">
+            Melinda Francis, LISW
+          </h1>
+          <h2 className="text-lg md:text-xl font-light tracking-widest uppercase text-[#8A9A86]">
+            Licensed Independent Social Worker
+          </h2>
+        </div>
+        
+        <div className="w-24 h-[1px] bg-[#8A9A86]/50 mx-auto"></div>
+        
+        <p className="text-xl md:text-3xl font-light text-[#5C6B5D] italic leading-relaxed">
+          Cultivating balance, resilience, and well-being.
+        </p>
+        
+        <div className="pt-12">
+          <p className="text-sm md:text-base tracking-[0.3em] uppercase text-[#8A9A86]">
+            Coming Soon
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
+  const [isFullSite, setIsFullSite] = useState(false);
+
+  useEffect(() => {
+    const hostname = window.location.hostname;
+    if (/^dr\.melindafrancis\.com$/i.test(hostname)) {
+      setIsFullSite(true);
+    }
+  }, []);
+
+  if (isFullSite) {
+    return <FullSite />;
+  }
+
+  return <ZenComingSoon />;
 }
