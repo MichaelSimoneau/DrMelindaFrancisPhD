@@ -98,6 +98,16 @@ function ZenComingSoon() {
           <p className="text-sm md:text-base tracking-[0.3em] uppercase text-[#8A9A86]">
             Coming Soon
           </p>
+          <div className="mt-8 flex justify-center">
+            <a
+              href="https://zerosudoku.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block border border-[#8A9A86]/70 px-6 py-3 text-sm md:text-base tracking-wide text-[#5C6B5D] transition-colors duration-300 hover:bg-[#8A9A86]/10 hover:text-[#2C3B2F]"
+            >
+              Try Zero Sudoku on ZeroSudoku.com to Manage Mental Health
+            </a>
+          </div>
         </div>
       </div>
     </div>
